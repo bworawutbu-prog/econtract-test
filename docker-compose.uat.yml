@@ -1,0 +1,12 @@
+version: "3"
+services:
+  dwf-2025-frontend:
+    image: ${IMG_NAME}
+    ports:
+      - "9080:3000"
+    networks:
+      - dwf-2025
+    restart: always
+
+networks:
+  dwf-2025:

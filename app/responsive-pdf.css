@@ -1,0 +1,327 @@
+/**
+ * Responsive PDF Template Styles
+ * Inspired by Canva.com responsive behavior
+ */
+
+:root {
+  --pdf-max-width: clamp(320px, 92vw, 960px);
+}
+
+/* ===== PDF Document Container ===== */
+.pdf-document-container {
+  @apply transition-all duration-300 ease-in-out;
+  width: 100%;
+  max-width: var(--pdf-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pdf-document-container canvas {
+  @apply max-w-full h-auto;
+  width: 100%;
+  touch-action: pan-y pinch-zoom;
+}
+
+.react-pdf__Page {
+  @apply w-full;
+  position: relative;
+  max-width: var(--pdf-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.react-pdf__Page__canvas {
+  @apply w-full h-auto;
+  max-width: inherit;
+  height: auto !important;
+}
+
+/* ===== Mobile Responsive Optimizations ===== */
+@media (max-width: 640px) {
+  /* Mobile: Reduce padding and margins */
+  .pdf-canvas-wrapper {
+    @apply p-2;
+  }
+
+  /* Mobile: Optimize PDF page rendering */
+  .react-pdf__Page {
+    @apply w-full max-w-full;
+  }
+
+  .react-pdf__Page__canvas {
+    @apply w-full h-auto;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Mobile: Optimize form elements */
+  .form-element-draggable {
+    @apply text-xs;
+    min-width: 60px;
+    min-height: 24px;
+  }
+
+  /* Mobile: Touch-friendly controls */
+  .pdf-controller-mobile {
+    @apply bottom-2 px-2 py-1;
+  }
+
+  /* Mobile: Hide unnecessary elements */
+  .mobile-hidden {
+    @apply hidden;
+  }
+}
+
+/* ===== Tablet Responsive Optimizations ===== */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Tablet: Balanced padding */
+  .pdf-canvas-wrapper {
+    @apply p-4;
+  }
+
+  /* Tablet: Adjust sidebar width */
+  .form-sidebar-tablet {
+    @apply w-64;
+  }
+
+  /* Tablet: Optimize PDF page rendering */
+  .react-pdf__Page {
+    @apply max-w-[90%];
+  }
+}
+
+/* ===== Desktop Optimizations ===== */
+@media (min-width: 1025px) {
+  :root {
+    --pdf-max-width: clamp(560px, 80vw, 1280px);
+  }
+
+  /* Desktop: Full features */
+  .pdf-canvas-wrapper {
+    @apply p-8;
+  }
+
+  /* Desktop: Full sidebar */
+  .form-sidebar-desktop {
+    @apply w-72;
+  }
+
+  /* 🎯 FIXED: Desktop - Prevent PDF from stretching, maintain natural aspect ratio */
+  .react-pdf__Page {
+    max-width: var(--pdf-max-width);
+  }
+
+  .react-pdf__Page__canvas {
+    max-width: var(--pdf-max-width);
+  }
+
+  /* Desktop: Ensure Document container doesn't force width */
+  .pdf-document-container {
+    max-width: var(--pdf-max-width);
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --pdf-max-width: clamp(640px, 72vw, 1400px);
+  }
+}
+
+/* ===== Touch Gesture Support ===== */
+.pdf-touch-enabled {
+  touch-action: pan-x pan-y pinch-zoom;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.pdf-touch-enabled:active {
+  cursor: grabbing;
+}
+
+/* Prevent text selection during drag */
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ===== PDF Page Transitions ===== */
+.pdf-page-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* ===== Form Element Responsive Styles ===== */
+.form-element-wrapper {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+@media (max-width: 640px) {
+  .form-element-wrapper {
+    /* Touch-friendly minimum sizes */
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  .form-element-text {
+    @apply text-xs leading-tight;
+    padding: 4px 6px !important;
+  }
+
+  .form-element-checkbox,
+  .form-element-radio {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+/* ===== Scrollbar Styles ===== */
+.pdf-scrollbar {
+  scrollbar-gutter: stable;
+  overflow-y: auto;
+}
+
+.pdf-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pdf-scrollbar::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+.pdf-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
+
+.pdf-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* ===== Hide Scrollbar for Horizontal Scroll ===== */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== Horizontal Scroll Container ===== */
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== Loading States ===== */
+.pdf-loading {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+.pdf-loading-spinner {
+  @apply animate-spin rounded-full border-2 border-gray-300 border-t-blue-600;
+}
+
+/* ===== Responsive Typography ===== */
+@media (max-width: 640px) {
+  .pdf-title {
+    @apply text-sm font-medium truncate;
+    max-width: 150px;
+  }
+
+  .pdf-button {
+    @apply text-xs px-2 py-1;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .pdf-title {
+    @apply text-base font-medium truncate;
+    max-width: 250px;
+  }
+
+  .pdf-button {
+    @apply text-sm px-3 py-1.5;
+  }
+}
+
+@media (min-width: 1025px) {
+  .pdf-title {
+    @apply text-lg font-medium;
+    max-width: none;
+  }
+
+  .pdf-button {
+    @apply text-base px-4 py-2;
+  }
+}
+
+/* ===== Aspect Ratio Utilities ===== */
+.pdf-aspect-a4 {
+  aspect-ratio: 210 / 297;
+}
+
+.pdf-aspect-letter {
+  aspect-ratio: 8.5 / 11;
+}
+
+/* ===== Mobile Navigation ===== */
+.mobile-nav-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 z-40;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+@media (min-width: 1025px) {
+  .mobile-nav-overlay {
+    @apply hidden;
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .pdf-canvas-wrapper {
+    padding: 0 !important;
+  }
+
+  .react-pdf__Page {
+    max-width: 100% !important;
+    page-break-after: always;
+  }
+}
+
+/* ===== Accessibility ===== */
+@media (prefers-reduced-motion: reduce) {
+  .pdf-page-transition,
+  .form-element-wrapper,
+  .pdf-document-container {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ===== High DPI / Retina Support ===== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .react-pdf__Page__canvas {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -webkit-image-rendering: crisp-edges;
+  }
+}
+
+

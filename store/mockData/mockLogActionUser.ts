@@ -1,0 +1,81 @@
+import { LogActionUser } from "../types/user";
+
+export const mockLogActionUsers: LogActionUser[] = [
+    {
+        id: "1",
+        name: "สมชาย ใจดี",
+        creation_date: "2025-09-01 10:15:30",
+        type: "สร้าง",
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic itaque corporis culpa pariatur facilis cum sint repellendus alias quo nobis cupiditate reprehenderit perspiciatis placeat, omnis molestiae nesciunt quos natus non! Neque optio adipisci nemo maxime? Cupiditate eligendi a impedit magni eos reiciendis at illum consectetur autem omnis itaque provident voluptas consequuntur quidem nulla ad repellendus quaerat labore, quasi excepturi enim assumenda quis maxime id. Facilis repellendus repudiandae eos illo at numquam.",
+    },
+    {
+        id: "2",
+        name: "สมหญิง แก้วใส",
+        creation_date: "2025-09-01 11:05:12",
+        type: "แก้ไข",
+        description: "แก้ไขข้อมูลสัญญาเลขที่ #1234",
+    },
+    {
+        id: "3",
+        name: "อนันต์ วัฒนะ",
+        creation_date: "2025-09-02 09:42:55",
+        type: "ลบ",
+        description: "quis voluptatum ea natus laboriosam eaque quae nisi corrupti vitae eveniet quasi vel aperiam exercitationem explicabo consequatur ut, laudantium nulla quos. Nostrum, ex cupiditate. Deserunt facere maxime vitae fugiat voluptate quaerat iste. Repudiandae, hic! Dolor quisquam perferendis rem assumenda, magni sint. Accusantium amet, praesentium et alias minima corrupti temporibus optio eveniet, rem id tempora, officia dolorem. Quos saepe cumque, eligendi dolores vel veritatis provident fugiat quam ipsam similique necessitatibus ex velit nisi totam! Consequuntur ducimus laudantium, mollitia numquam iusto ex saepe rem itaque minus distinctio doloribus, necessitatibus similique? Aperiam, maxime perspiciatis, sapiente saepe magni laudantium eaque praesentium alias, totam quae odit quibusdam provident expedita maiores blanditiis officia et",
+    },
+    {
+        id: "4",
+        name: "ศิริพร แสงทอง",
+        creation_date: "2025-09-02 14:22:10",
+        type: "อนุมัติ",
+        description: "อนุมัติคำร้องขอเอกสาร #5678",
+    },
+    {
+        id: "5",
+        name: "กิตติพงศ์ คำภา",
+        creation_date: "2025-09-03 08:10:44",
+        type: "ปฏิเสธ",
+        description: "ปฏิเสธคำขอเปลี่ยนแปลงสัญญา #4321",
+    },
+    {
+        id: "6",
+        name: "พิมพ์ชนก สุขใจ",
+        creation_date: "2025-09-03 16:45:27",
+        type: "เข้าสู่ระบบ",
+        description: "เข้าสู่ระบบจาก IP 192.168.1.101",
+    },
+    {
+        id: "7",
+        name: "นฤมล ศรีสุข",
+        creation_date: "2025-09-04 12:30:00",
+        type: "ออกจากระบบ",
+        description: "ออกจากระบบสำเร็จ",
+    },
+    {
+        id: "8",
+        name: "วิชัย สายชล",
+        creation_date: "2025-09-05 09:00:15",
+        type: "อัปโหลด",
+        description: "อัปโหลดไฟล์รายงานประจำเดือน",
+    },
+    {
+        id: "9",
+        name: "รุ่งทิวา ดาวสว่าง",
+        creation_date: "2025-09-05 15:18:47",
+        type: "ดาวน์โหลด",
+        description: "ดาวน์โหลดไฟล์สัญญา #7890",
+    },
+    {
+        id: "10",
+        name: "ชาญชัย ภูมิใจ",
+        creation_date: "2025-09-06 10:55:33",
+        type: "แจ้งเตือน",
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus cumque dignissimos eius reprehenderit quaerat! Ullam, accusantium sunt. Accusamu",
+    },
+    {
+        id: "11",
+        name: "สมชิง ทองแท้",
+        creation_date: "2025-09-06 10:55:33",
+        type: "แจ้งเตือน",
+        description: "แจ้งเตือนผู้ใช้งานเกี่ยวกับการหมดอายุสัญญา",
+    },
+];
