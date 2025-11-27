@@ -1,1 +1,0 @@
-# econtract-test
